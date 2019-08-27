@@ -8,16 +8,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="t_conductores")
 public class Conductor {
 
 	@Id
-	@Column(name="co_tarjeta_credito")
+	@Column(name="co_tarjeta_credito", nullable = false)
 	private String tarjeta;
 	
-	@Column(name="co_nombre")
+	@Column(name="co_nombre", nullable = false)
 	private String nombre = null;
 	
 	@Column(name="co_modelo")
@@ -32,7 +33,10 @@ public class Conductor {
 	@Column(name="co_ocupado")
 	private boolean ocupado = false;
 	
+	@Transient
 	private ArrayList<Byte> valoraciones = new ArrayList<>();
+	
+	@Transient
 	private Set<Carrera> carreras = new HashSet<>();
 
 	/**
@@ -40,6 +44,7 @@ public class Conductor {
 	 * para trabajar con Spring JPA
 	 */
 		
+	public Conductor() {};
 	public Conductor(String tarjetaCredito){
 		this.tarjeta = tarjetaCredito;
 	}
