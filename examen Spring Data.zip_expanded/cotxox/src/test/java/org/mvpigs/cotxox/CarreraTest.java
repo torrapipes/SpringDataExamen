@@ -121,7 +121,7 @@ public class CarreraTest {
 		Conductor conductor = new Conductor("Samantha");
 		carrera.setConductor(conductor);
 		carrera.liberarConductor();
-		assert(!carrera.getConductor().isOcupado());
+		assert(!(carrera.getConductor().isOcupado() == 1));
 	}
 	
 	@Test

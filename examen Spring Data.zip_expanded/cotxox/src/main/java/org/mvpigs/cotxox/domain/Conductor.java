@@ -18,20 +18,20 @@ public class Conductor {
 	@Column(name="co_tarjeta_credito", nullable = false)
 	private String tarjeta;
 	
-	@Column(name="co_nombre", nullable = false)
-	private String nombre = null;
+	@Column(name="co_nombre")
+	private String nombre;
 	
 	@Column(name="co_modelo")
-	private String modelo = null;
+	private String modelo;
 	
 	@Column(name="co_matricula")
-	private String matricula = null;
+	private String matricula;
 	
 	@Column(name="co_valoracion_media")
-	private double valoracionMedia = 0d;
+	private double valoracionMedia;
 	
 	@Column(name="co_ocupado")
-	private boolean ocupado = false;
+	private Integer ocupado;
 	
 	@Transient
 	private ArrayList<Byte> valoraciones = new ArrayList<>();
@@ -103,11 +103,11 @@ public class Conductor {
 		return this.valoracionMedia;
 	}
 	
-	public void setOcupado(Boolean ocupado){
+	public void setOcupado(Integer ocupado){
 		this.ocupado = ocupado;
 	}
 	
-	public boolean isOcupado(){
+	public Integer isOcupado(){
 		return this.ocupado;
 	}
 

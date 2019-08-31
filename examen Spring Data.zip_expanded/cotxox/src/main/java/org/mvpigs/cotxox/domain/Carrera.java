@@ -142,6 +142,6 @@ public class Carrera {
 	}
 	
 	public void liberarConductor(){
-		getConductor().setOcupado(false);
+		getConductor().setOcupado(0);
 	}
 }

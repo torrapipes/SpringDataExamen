@@ -36,8 +36,8 @@ public class PoolConductores {
 		while(!asignado){
 			int index = aleatorio.nextInt(getPoolConductores().size());
 			conductor = getPoolConductores().get(index);
-			if(!conductor.isOcupado()){
-				conductor.setOcupado(true);
+			if(!(conductor.isOcupado() == 1)){
+				conductor.setOcupado(1);
 				asignado = true;
 			}
 		}
