@@ -15,4 +15,16 @@ public class ConductorService {
         return conductorRepo.findById(tarjeta).get();
     }
 
+    public void crearConductor(String tarjeta, String nombre, String matricula, String modelo){
+
+        Conductor conductor = new Conductor(tarjeta);
+
+        conductor.setNombre(nombre);
+        conductor.setModelo(modelo);
+        conductor.setMatricula(matricula);
+
+        conductorRepo.save(conductor);
+
+    }
+
 }
